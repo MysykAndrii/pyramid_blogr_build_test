@@ -21,7 +21,9 @@ jobs:
         python-version: ${{ matrix.python-version }}
       
     - name: Create a Python virtual environment
-      run: python3 -m venv env
+      working-directoty: ./pyramid_blogr
+      run: |
+      python3 -m venv env
 
 # Upgrade packaging tools
       run: env/bin/pip install --upgrade pip setuptools
