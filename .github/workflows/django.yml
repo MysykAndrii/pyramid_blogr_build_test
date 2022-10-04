@@ -11,19 +11,20 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
-    - name: Python Version and List Folder
+    - name: Python Version and List Current Folder
       run: |
         python3 --version
         ls -la
       
  #   - name: Set up Python ${{ matrix.python-version }}
  #     uses: actions/setup-python@v3
-#      run: python --version
- #     run: ls -la
       
- #   - name: Create a Python virtual environment
+    - name: Create a Python virtual environment
  #     working-directoty: ./pyramid_blogr
- #     run: python3 -m venv env |
+      run: python3 -m venv env
+      
+    - name: List Current Folder2
+      run: ls -la
 
 # Upgrade packaging tools
  #        env/bin/pip install --upgrade pip setuptools
