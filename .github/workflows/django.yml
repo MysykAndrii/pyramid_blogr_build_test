@@ -19,6 +19,8 @@ jobs:
         mv pyramid_blogr_build_test pyramid_blogr
         cd .. 
         mv pyramid_blogr_build_test pyramid_blogr
+        cd pyramid_blogr
+        cd pyramid_blogr
         pwd
         ls -la
         
