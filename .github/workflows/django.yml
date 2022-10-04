@@ -8,8 +8,10 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    
     steps:
     - uses: actions/checkout@v3
+    - name: Python Version and List Folder
       run: python --version |
            ls -la
       
@@ -23,22 +25,22 @@ jobs:
  #     run: python3 -m venv env |
 
 # Upgrade packaging tools
-         env/bin/pip install --upgrade pip setuptools
+ #        env/bin/pip install --upgrade pip setuptools
 
 # Install the project in editable mode with its testing requirements
-      run: env/bin/pip install -e ".[testing]"
+ #     run: env/bin/pip install -e ".[testing]"
 
 # Initialize and upgrade the database using Alembic
     # Generate your first revision.
-      run: env/bin/alembic -c development.ini revision --autogenerate -m "init"
+#      run: env/bin/alembic -c development.ini revision --autogenerate -m "init"
     # Upgrade to that revision.
-      run: env/bin/alembic -c development.ini upgrade head
+#      run: env/bin/alembic -c development.ini upgrade head
 # Load default data into the database using a script.
-      run: env/bin/initialize_pyramid_blogr_db development.ini
+#      run: env/bin/initialize_pyramid_blogr_db development.ini
 # Run your project's tests.
-      run: env/bin/pytest
+#      run: env/bin/pytest
 # Run your project.
-      run: env/bin/pserve development.ini   
+#      run: env/bin/pserve development.ini   
         
         
         
