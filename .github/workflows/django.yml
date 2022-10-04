@@ -30,7 +30,7 @@ jobs:
  #     uses: actions/setup-python@v3
       
     - name: Create a Python virtual environment
-      working-directory: ./pyramid_blogr
+      working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
       run: python3 -m venv env
     - name: List Current Folder2
       run: ls -la
