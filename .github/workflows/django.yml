@@ -15,7 +15,14 @@ jobs:
       run: |
         pwd
         ls -la
+        cd ..
+        mv pyramid_blogr_build_test pyramid_blogr
+        cd .. 
+        mv pyramid_blogr_build_test pyramid_blogr
+        pwd
+        ls -la
         
+ #   /home/runner/work/pyramid_blogr_build_test/pyramid_blogr_build_test 
       
  #   - name: Set up Python ${{ matrix.python-version }}
  #     uses: actions/setup-python@v3
