@@ -67,14 +67,17 @@ jobs:
       continue-on-error: true
       run: env/bin/pytest
       
-# Run your project.
-#      run: env/bin/pserve development.ini   
- #     working-directoty: ./pyramid_blogr        
-        
-#    - name: Install Dependencies
- #     run: |
-  #      python -m pip install --upgrade pip
-   #     pip install -r requirements.txt
+    - name: Run Tests
+      working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
+      continue-on-error: true
+      run: |
+        python setup.py test  
+           
+    - name: Run your project.
+      working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
+      continue-on-error: true
+      run: env/bin/pserve development.ini  
+           
     #- name: Run Tests
      # run: |
       #  python setup.py test
