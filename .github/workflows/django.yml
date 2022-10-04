@@ -25,13 +25,16 @@ jobs:
     - name: Upgrade packaging tools
       run: env/bin/pip install --upgrade pip setuptools
       
+    - name: Install the project in editable mode with its testing requirements
+      run: env/bin/pip install -e ".[testing]"
+      
+      
     - name: List Current Folder2
       run: ls -la
 
 
 
-# Install the project in editable mode with its testing requirements
- #     run: env/bin/pip install -e ".[testing]"
+
 
 # Initialize and upgrade the database using Alembic
     # Generate your first revision.
