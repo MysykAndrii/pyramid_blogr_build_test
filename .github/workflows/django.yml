@@ -19,6 +19,7 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
+    - run: python --version
     - run: ls -la
       
  #   - name: Create a Python virtual environment
