@@ -8,19 +8,15 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 4
-      matrix:
-        python-version: [3.7, 3.8, 3.9]
-
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
-      with:
-        python-version: ${{ matrix.python-version }}
-      run: python --version
-      run: ls -la
+      run: python --version |
+           ls -la
+      
+ #   - name: Set up Python ${{ matrix.python-version }}
+ #     uses: actions/setup-python@v3
+#      run: python --version
+ #     run: ls -la
       
  #   - name: Create a Python virtual environment
  #     working-directoty: ./pyramid_blogr
