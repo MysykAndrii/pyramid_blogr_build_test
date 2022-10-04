@@ -36,9 +36,11 @@ jobs:
       working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
       run: ls -la
       
-    - name: Upgrade packaging tools
+    - name: Upgrade packaging tools and Install wheel
       working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
-      run: env/bin/pip install --upgrade pip setuptools
+      run: |
+         env/bin/pip install --upgrade pip setuptools
+         pip install wheel
       
     - name: Install the project in editable mode with its testing requirements
       working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
