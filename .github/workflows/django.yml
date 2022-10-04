@@ -14,6 +14,7 @@ jobs:
     - name: Python Version and List Current Folder
       run: |
         python3 --version
+        pwd
         ls -la
       
  #   - name: Set up Python ${{ matrix.python-version }}
