@@ -12,8 +12,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Python Version and List Folder
-      run: python3 --version |
-           ls -la
+      run: |
+        python3 --version
+        ls -la
       
  #   - name: Set up Python ${{ matrix.python-version }}
  #     uses: actions/setup-python@v3
