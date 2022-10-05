@@ -1,0 +1,1 @@
+[![CI-pipeline](https://github.com/MysykAndrii/pyramid_blogr_build_test/actions/workflows/Build-and-Test.yml/badge.svg?branch=main)](https://github.com/MysykAndrii/pyramid_blogr_build_test/actions/workflows/Build-and-Test.yml)
