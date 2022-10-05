@@ -73,6 +73,6 @@ jobs:
       run: |
         python setup.py test  
            
-   # - name: Run your project.
-   #   working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
-   #   run: env/bin/pserve development.ini 
+    - name: Run your project.
+    #  working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
+      run: env/bin/pserve development.ini 
