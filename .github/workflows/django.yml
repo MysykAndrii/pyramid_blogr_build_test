@@ -15,14 +15,14 @@ jobs:
       run: |
         pwd
         ls -la
-        cd ..
-        mv pyramid_blogr_build_test pyramid_blogr
-        cd .. 
-        mv pyramid_blogr_build_test pyramid_blogr
-        cd pyramid_blogr
-        cd pyramid_blogr
-        pwd
-        ls -la
+       # cd ..
+       # mv pyramid_blogr_build_test pyramid_blogr
+       # cd .. 
+       # mv pyramid_blogr_build_test pyramid_blogr
+       # cd pyramid_blogr
+       # cd pyramid_blogr
+       # pwd
+       # ls -la
         
  #   /home/runner/work/pyramid_blogr_build_test/pyramid_blogr_build_test 
       
@@ -30,45 +30,45 @@ jobs:
  #     uses: actions/setup-python@v3
       
     - name: Create a Python virtual environment
-      working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
+    #  working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
       run: python3 -m venv env
     - name: List Current Folder2
-      working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
+    #  working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
       run: ls -la
       
     - name: Upgrade packaging tools and Install wheel
-      working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
+    #  working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
       run: |
          env/bin/pip install --upgrade pip setuptools
          pip install wheel
       
     - name: Install the project in editable mode with its testing requirements
-      working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
+    #  working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
       continue-on-error: true
       run: env/bin/pip install -e ".[testing]"
       
     # Initialize and upgrade the database using Alembic
     - name: Generate your first revision.
-      working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
+    #  working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
       continue-on-error: true
       run: env/bin/alembic -c development.ini revision --autogenerate -m "init"
     - name: Upgrade to that revision.
-      working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
+    #  working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
       continue-on-error: true
       run: env/bin/alembic -c development.ini upgrade head
       
     - name: Load default data into the database using a script.
-      working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
+    #  working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
       continue-on-error: true
       run: env/bin/initialize_pyramid_blogr_db development.ini
   
     - name: Run your project's tests. 
-      working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
+    #  working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
       continue-on-error: true
       run: env/bin/pytest
       
     - name: Run Tests
-      working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
+    #  working-directory: /home/runner/work/pyramid_blogr/pyramid_blogr
       continue-on-error: true
       run: |
         python setup.py test  
